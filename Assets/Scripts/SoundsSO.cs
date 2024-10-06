@@ -8,25 +8,40 @@ public class SoundsSO : ScriptableObject
 {
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private string channelVolume;
-    [SerializeField] private float currentVolume;
+    [SerializeField] private float currentVolume = 0.75f;
+    private const float MIN_VOLUME = -80f; 
+    private const float MAX_VOLUME = 20f;  
 
-    private bool ismuted = true;
+    private bool isMuted = false; 
+
     public void UpdateVolume(Slider slider)
     {
-        currentVolume = slider.value;
-        mixer.SetFloat(channelVolume, Mathf.Log10(currentVolume) * 20f);
+        float newVolume = Mathf.Clamp(slider.value, 0.0001f, 1f);
+        currentVolume = newVolume;
+        ApplyVolume(newVolume);
     }
-    public void MuteVolume()
+
+    public void ToggleMute()
     {
-        if (ismuted == true)
+        isMuted = !isMuted;
+        if (isMuted)
         {
-            mixer.SetFloat(channelVolume, Mathf.Log10(-80) * 20f);
-            ismuted = false;
+            ApplyVolume(0f);
         }
         else
         {
-            mixer.SetFloat(channelVolume, Mathf.Log10(currentVolume) * 20f);
-            ismuted = true;
+            ApplyVolume(currentVolume);
         }
+    }
+
+    private void ApplyVolume(float volume)
+    {
+        float decibels = volume > 0 ? Mathf.Log10(volume) * MAX_VOLUME : MIN_VOLUME;
+        mixer.SetFloat(channelVolume, decibels);
+    }
+
+    public void RestoreVolume()
+    {
+        ApplyVolume(isMuted ? 0f : currentVolume);
     }
 }

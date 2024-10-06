@@ -1,0 +1,158 @@
+# Blender MTL File: "00000 Let's GO mimc attempt 2.0.blend"
+# Material Count: 12
+
+newmtl bm_combg01_01.001
+Ns 350.000024
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 0.000000
+illum 2
+map_Kd  Textures\\bm_combg01_01.png
+map_Ks  Textures\\bm_combg01_01.png
+map_d  Textures\\bm_combg01_01.png
+
+newmtl floor01_com_chika.001
+Ns 350.000024
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 0.000000
+illum 2
+map_Kd  Textures\\floor01_com_chika.png
+map_Ks  Textures\\floor01_com_chika.png
+map_d  Textures\\floor01_com_chika.png
+
+newmtl floor01_com_chika.002
+Ns 350.000024
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 0.000000
+illum 2
+map_Kd  Textures\\floor01_com_chika.png
+map_Ks  Textures\\floor01_com_chika.png
+map_d  Textures\\floor01_com_chika.png
+
+newmtl light01_com_chika.001
+Ns 350.000024
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 0.000000
+illum 2
+map_Kd  Textures\\light01_com_chika.png
+map_Ks  Textures\\light01_com_chika.png
+map_d  Textures\\light01_com_chika.png
+
+newmtl light01_com_chika_2.001
+Ns 350.000024
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 0.000000
+illum 2
+map_Kd  Textures\\light01_com_chika.png
+map_Ks  Textures\\light01_com_chika.png
+map_d  Textures\\light01_com_chika.png
+
+newmtl stair01_com_chika.001
+Ns 350.000024
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 0.000000
+illum 2
+map_Kd  Textures\\stair01_com_chika.png
+map_Ks  Textures\\stair01_com_chika.png
+map_d  Textures\\stair01_com_chika.png
+
+newmtl stair01_com_chika_02.001
+Ns 350.000024
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 0.000000
+illum 2
+map_Kd  Textures\\stair01_com_chika.png
+map_Ks  Textures\\stair01_com_chika.png
+map_d  Textures\\stair01_com_chika.png
+
+newmtl wall01_com_chika.001
+Ns 350.000024
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 0.000000
+illum 2
+map_Kd  Textures\\wall01_com_chika.png
+map_Ks  Textures\\wall01_com_chika.png
+map_d  Textures\\wall01_com_chika.png
+
+newmtl wall01_com_chika.002
+Ns 350.000024
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 0.000000
+illum 2
+map_Kd  Textures\\wall01_com_chika.png
+map_Ks  Textures\\wall01_com_chika.png
+map_d  Textures\\wall01_com_chika.png
+
+newmtl wall01_com_chika.003
+Ns 350.000024
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 0.000000
+illum 2
+map_Kd  Textures\\wall01_com_chika.png
+map_Ks  Textures\\wall01_com_chika.png
+map_d  Textures\\wall01_com_chika.png
+
+newmtl wall02_com_chika.001
+Ns 350.000024
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 0.000000
+illum 2
+map_Kd  Textures\\wall02_com_chika.png
+map_Ks  Textures\\wall02_com_chika.png
+map_d  Textures\\wall02_com_chika.png
+
+newmtl wall03_com_chika.001
+Ns 350.000024
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni -1.000000
+d 0.000000
+illum 2
+map_Kd  Textures\\wall03_com_chika.png
+map_Ks  Textures\\wall03_com_chika.png
+map_d  Textures\\wall03_com_chika.png

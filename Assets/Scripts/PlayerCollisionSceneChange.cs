@@ -9,7 +9,7 @@ public class PlayerCollisionSceneChange : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("SceneChanger"))
+        if (other.CompareTag("Player"))
         {
             SceneTransitionManager.Instance.FadeToScene(sceneToLoad);
         }

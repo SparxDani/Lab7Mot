@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4798da3822932a43bab964166fd724f, type: 3}
   m_Name: SFX
   m_EditorClassIdentifier: 
-  mixer: {fileID: 0}
+  mixer: {fileID: 24100000, guid: 36dc067ac0caddd418647e57637d9838, type: 2}
   channelVolume: SFX
-  currentVolume: 0
+  currentVolume: 0.5020447

@@ -1,0 +1,16 @@
+newmtl warp02a
+Ka 0.7843137 0.7843137 0.7843137
+Kd 0.7843137 0.7843137 0.7843137
+d 1
+Tr 1
+map_Ka warp02a.png
+map_Kd warp02a.png
+map_d warp02a.png
+newmtl warp2b
+Ka 0 0 0
+Kd 0.7843137 0.7843137 0.7843137
+d 1
+Tr 1
+map_Ka warp2b.png
+map_Kd warp2b.png
+map_d warp2b.png

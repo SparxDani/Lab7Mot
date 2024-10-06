@@ -1,0 +1,3 @@
+to set up add01_com_chika.png proper onto the wall and floor 
+
+on wall01_com_chika & floor01_com_chika set it to use the second uv map
