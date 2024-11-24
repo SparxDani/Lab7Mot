@@ -3,27 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.AI; 
 
 public class NPCInteraction : MonoBehaviour
 {
-    public GameObject dialogPanel; 
-    public TMP_Text dialogText;        
+    public GameObject dialogPanel;
+    public TMP_Text dialogText;
     public string dialogMessage;
     public float interactionDistance = 3f;
-    private bool isPlayerNearby = false; 
-    private bool isInteracting = false; 
-    public Transform[] waypoints;
-    public float dialogDisplayTime;
-    public float moveSpeed = 2f;
+    private bool isPlayerNearby = false;
+    private bool isInteracting = false;
+    public Transform[] waypoints; 
+    public float dialogDisplayTime = 2f;
     public float waitTimeAtWaypoint = 2f;
+    public float wanderRadius = 5f;
+    public float wanderWaitTime = 3f;
     private int currentWaypointIndex = 0;
     private bool isMoving = true;
 
-
+    private NavMeshAgent navMeshAgent;
 
     private void Start()
     {
-        StartCoroutine(MoveToNextWaypoint());
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        if (navMeshAgent == null)
+        {
+            Debug.LogError("Falta el componente NavMeshAgent.");
+            enabled = false;
+            return;
+        }
+
+        navMeshAgent.speed = 2f; 
+        StartCoroutine(WanderOrMoveToWaypoints());
     }
 
     public void OnInteract(InputAction.CallbackContext context)
@@ -38,6 +49,8 @@ public class NPCInteraction : MonoBehaviour
     {
         isInteracting = true;
         isMoving = false;
+
+        navMeshAgent.ResetPath(); 
         dialogPanel.SetActive(true);
         dialogText.text = dialogMessage;
 
@@ -48,24 +61,40 @@ public class NPCInteraction : MonoBehaviour
         isInteracting = false;
     }
 
-    private IEnumerator MoveToNextWaypoint()
+    private IEnumerator WanderOrMoveToWaypoints()
     {
         while (true)
         {
             if (isMoving)
             {
-                Transform targetWaypoint = waypoints[currentWaypointIndex];
-                while (Vector3.Distance(transform.position, targetWaypoint.position) > 0.1f)
+                if (waypoints.Length > 0 && Random.value > 0.3f) 
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, moveSpeed * Time.deltaTime);
-                    yield return null;
+                    Transform targetWaypoint = waypoints[currentWaypointIndex];
+                    navMeshAgent.SetDestination(targetWaypoint.position);
+                    while (navMeshAgent.pathPending || navMeshAgent.remainingDistance > 0.5f)
+                    {
+                        yield return null;
+                    }
+                    yield return new WaitForSeconds(waitTimeAtWaypoint);
+                    currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
                 }
-
-                yield return new WaitForSeconds(waitTimeAtWaypoint);
-
-                currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+                else
+                {
+                    Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
+                    randomDirection += transform.position;
+                    if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, wanderRadius, NavMesh.AllAreas))
+                    {
+                        navMeshAgent.SetDestination(hit.position);
+                        while (navMeshAgent.pathPending || navMeshAgent.remainingDistance > 0.5f)
+                        {
+                            yield return null;
+                        }
+                        yield return new WaitForSeconds(wanderWaitTime);
+                    }
+                }
             }
-            yield return null;
+
+            yield return null; 
         }
     }
 
